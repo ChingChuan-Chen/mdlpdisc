@@ -1,0 +1,5 @@
+__pycache__
+mdlp2/build
+mdlpdisc/build
+*.pyd
+
