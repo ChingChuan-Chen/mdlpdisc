@@ -39,7 +39,7 @@ cdef class mdlpdisc:
     @wraparound(False)
     def __init__(self, np.float64_t[::1] x not None, np.int64_t[::1] y not None):
         cdef size_t n = x.shape[0]
-        if y.shape[0] != n:
+        if y.shape[0] != <np.intp_t> n:
             raise Exception("The length of x must be equal to the length of y.")
         if np.amin(y) < 0:
             raise Exception("y must have no negative elements")

@@ -19,7 +19,6 @@ template <typename T>
 void get_sliced_entropy(T y[], size_t low, size_t upp,
                         size_t& k, double& entropy) {
     size_t n = upp - low;
-    T *ymin = std::min_element(y + low, y + upp);
     T *ymax = std::max_element(y + low, y + upp);
     size_t *freq = (size_t*) malloc((*ymax+1)*sizeof(size_t));
     std::fill(freq, freq + *ymax+1, 0);

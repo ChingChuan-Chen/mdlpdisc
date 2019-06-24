@@ -10,7 +10,8 @@
             "helper.h"
         ],
         "extra_compile_args": [
-            "/openmp"
+            "/openmp",
+            "/std:c+11"
         ],
         "include_dirs": [
             "C:\\Anaconda3\\lib\\site-packages\\numpy\\core\\include"
@@ -2691,7 +2692,7 @@ static PyObject *__pyx_codeobj__36;
  *     @wraparound(False)
  *     def __init__(self, np.float64_t[::1] x not None, np.int64_t[::1] y not None):             # <<<<<<<<<<<<<<
  *         cdef size_t n = x.shape[0]
- *         if y.shape[0] != n:
+ *         if y.shape[0] != <np.intp_t> n:
  */
 
 /* Python wrapper */
@@ -2793,7 +2794,7 @@ static int __pyx_pf_8mdlpdisc_8mdlpdisc___init__(struct __pyx_obj_8mdlpdisc_mdlp
  *     @wraparound(False)
  *     def __init__(self, np.float64_t[::1] x not None, np.int64_t[::1] y not None):
  *         cdef size_t n = x.shape[0]             # <<<<<<<<<<<<<<
- *         if y.shape[0] != n:
+ *         if y.shape[0] != <np.intp_t> n:
  *             raise Exception("The length of x must be equal to the length of y.")
  */
   __pyx_v_n = (__pyx_v_x.shape[0]);
@@ -2801,16 +2802,16 @@ static int __pyx_pf_8mdlpdisc_8mdlpdisc___init__(struct __pyx_obj_8mdlpdisc_mdlp
   /* "mdlpdisc.pyx":42
  *     def __init__(self, np.float64_t[::1] x not None, np.int64_t[::1] y not None):
  *         cdef size_t n = x.shape[0]
- *         if y.shape[0] != n:             # <<<<<<<<<<<<<<
+ *         if y.shape[0] != <np.intp_t> n:             # <<<<<<<<<<<<<<
  *             raise Exception("The length of x must be equal to the length of y.")
  *         if np.amin(y) < 0:
  */
-  __pyx_t_1 = (((__pyx_v_y.shape[0]) != __pyx_v_n) != 0);
+  __pyx_t_1 = (((__pyx_v_y.shape[0]) != ((__pyx_t_5numpy_intp_t)__pyx_v_n)) != 0);
   if (unlikely(__pyx_t_1)) {
 
     /* "mdlpdisc.pyx":43
  *         cdef size_t n = x.shape[0]
- *         if y.shape[0] != n:
+ *         if y.shape[0] != <np.intp_t> n:
  *             raise Exception("The length of x must be equal to the length of y.")             # <<<<<<<<<<<<<<
  *         if np.amin(y) < 0:
  *             raise Exception("y must have no negative elements")
@@ -2824,14 +2825,14 @@ static int __pyx_pf_8mdlpdisc_8mdlpdisc___init__(struct __pyx_obj_8mdlpdisc_mdlp
     /* "mdlpdisc.pyx":42
  *     def __init__(self, np.float64_t[::1] x not None, np.int64_t[::1] y not None):
  *         cdef size_t n = x.shape[0]
- *         if y.shape[0] != n:             # <<<<<<<<<<<<<<
+ *         if y.shape[0] != <np.intp_t> n:             # <<<<<<<<<<<<<<
  *             raise Exception("The length of x must be equal to the length of y.")
  *         if np.amin(y) < 0:
  */
   }
 
   /* "mdlpdisc.pyx":44
- *         if y.shape[0] != n:
+ *         if y.shape[0] != <np.intp_t> n:
  *             raise Exception("The length of x must be equal to the length of y.")
  *         if np.amin(y) < 0:             # <<<<<<<<<<<<<<
  *             raise Exception("y must have no negative elements")
@@ -2880,7 +2881,7 @@ static int __pyx_pf_8mdlpdisc_8mdlpdisc___init__(struct __pyx_obj_8mdlpdisc_mdlp
     __PYX_ERR(0, 45, __pyx_L1_error)
 
     /* "mdlpdisc.pyx":44
- *         if y.shape[0] != n:
+ *         if y.shape[0] != <np.intp_t> n:
  *             raise Exception("The length of x must be equal to the length of y.")
  *         if np.amin(y) < 0:             # <<<<<<<<<<<<<<
  *             raise Exception("y must have no negative elements")
@@ -3045,7 +3046,7 @@ static int __pyx_pf_8mdlpdisc_8mdlpdisc___init__(struct __pyx_obj_8mdlpdisc_mdlp
  *     @wraparound(False)
  *     def __init__(self, np.float64_t[::1] x not None, np.int64_t[::1] y not None):             # <<<<<<<<<<<<<<
  *         cdef size_t n = x.shape[0]
- *         if y.shape[0] != n:
+ *         if y.shape[0] != <np.intp_t> n:
  */
 
   /* function exit code */
@@ -21359,7 +21360,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "mdlpdisc.pyx":43
  *         cdef size_t n = x.shape[0]
- *         if y.shape[0] != n:
+ *         if y.shape[0] != <np.intp_t> n:
  *             raise Exception("The length of x must be equal to the length of y.")             # <<<<<<<<<<<<<<
  *         if np.amin(y) < 0:
  *             raise Exception("y must have no negative elements")

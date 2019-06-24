@@ -11,6 +11,7 @@ if platform.system() == 'Windows':
     extra_compile_args.append("/openmp")
 else:
 	extra_compile_args.append("-fopenmp")
+	extra_compile_args.append("-std=c++11")
 	extra_link_args.append("-fopenmp")
 
 ext = Extension(name="mdlpdisc", 
