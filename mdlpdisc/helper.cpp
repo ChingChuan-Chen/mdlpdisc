@@ -1,4 +1,5 @@
 #include <cstdint>
+#include <cmath>
 #include <numeric>
 #include <algorithm>
 #include <omp.h>
